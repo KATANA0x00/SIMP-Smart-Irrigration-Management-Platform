@@ -31,24 +31,27 @@ const navPage = [
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={baiJamjuree.variable}>
-      <div className="h-[72] px-[32] bg-(--mtr-blue) text-white w-screen flex items-center gap-[75] fixed top-0 z-100 shadow-md">
-        <div>
-          <label className="font-bold text-3xl">SIMP</label>
+      <body className="pt-[72]">
+        <div className="h-[72] px-[32] bg-(--mtr-blue) text-white w-screen flex items-center gap-[75] fixed top-0 z-100 shadow-md">
+          <div>
+            <label className="font-bold text-3xl tracking-[6]">SIMP</label>
+          </div>
+          <div className="flex items-center gap-[60]">
+            {navPage.map((item, index) => {
+              return (
+                <Link key={index} href={item.path}>
+                  <label className="hover:underline">{item.label}</label>
+                </Link>
+              );
+            })}
+          </div>
         </div>
-        <div className="flex items-center gap-[60]">
-          {navPage.map((item, index) => {
-            return (
-              <Link key={index} href={item.path}>
-                <label className="hover:underline">{item.label}</label>
-              </Link>
-            );
-          })}
+
+        <div className="min-h-[calc(100vh-144px)]">{children}</div>
+        <div className="h-[72] px-[32] bg-(--mtr-blue) text-white w-screen flex items-center gap-[75] shadow-md">
+          <label>Smart Irrigration Management Platform</label>
         </div>
-      </div>
-      <body className="mt-[72]">{children}</body>
-      <div className="h-[72] px-[32] bg-(--mtr-blue) text-white w-screen flex items-center gap-[75] shadow-md">
-        <label>Smart Irrigration Management Platform</label>
-      </div>
+      </body>
     </html>
   );
 }
