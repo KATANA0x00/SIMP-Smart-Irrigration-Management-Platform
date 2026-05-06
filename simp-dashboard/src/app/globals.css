@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  /* Font configuration */
+  --font-main-family: var(--font-bai-jamjuree), sans-serif;
+  --font-main-size: 16px;
+  --font-main-weight: 500;
+
+  /* Colors */
+  --background: #f8f8ff;
+  --foreground: #171717;
+  --mtr-blue: #062F6E;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
+}
+
+body {
+  font-family: var(--font-main-family);
+  font-size: var(--font-main-size);
+  font-weight: var(--font-main-weight);
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
