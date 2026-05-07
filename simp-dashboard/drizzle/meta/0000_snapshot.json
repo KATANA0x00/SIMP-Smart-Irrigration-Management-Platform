@@ -1,17 +1,29 @@
 {
-  "id": "dc1ce3c7-6e78-46e9-b4b6-d688683c141c",
+  "id": "de64cb9c-fb62-4936-a28b-ca4e95b59adf",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.users": {
-      "name": "users",
+    "public.c_node_properties": {
+      "name": "c_node_properties",
       "schema": "",
       "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
+        "deveui": {
+          "name": "deveui",
+          "type": "text",
           "primaryKey": true,
+          "notNull": true
+        },
+        "nwskey": {
+          "name": "nwskey",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apskey": {
+          "name": "apskey",
+          "type": "text",
+          "primaryKey": false,
           "notNull": true
         },
         "name": {
@@ -20,32 +32,242 @@
           "primaryKey": false,
           "notNull": true
         },
-        "email": {
-          "name": "email",
-          "type": "text",
+        "lat": {
+          "name": "lat",
+          "type": "real",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false,
+          "default": 14.844598
         },
-        "created_at": {
-          "name": "created_at",
+        "lng": {
+          "name": "lng",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 99.794765
+        },
+        "last_interact": {
+          "name": "last_interact",
           "type": "timestamp",
           "primaryKey": false,
-          "notNull": true,
-          "default": "now()"
+          "notNull": false
+        },
+        "control_status": {
+          "name": "control_status",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
         }
       },
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "users_email_unique": {
-          "name": "users_email_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.c_schedules": {
+      "name": "c_schedules",
+      "schema": "",
+      "columns": {
+        "index": {
+          "name": "index",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "node": {
+          "name": "node",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
+        },
+        "day": {
+          "name": "day",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
+        },
+        "time_on": {
+          "name": "time_on",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "time_off": {
+          "name": "time_off",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": false
         }
       },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.s_node_datas": {
+      "name": "s_node_datas",
+      "schema": "",
+      "columns": {
+        "index": {
+          "name": "index",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "deveui": {
+          "name": "deveui",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "timestamp_arrive": {
+          "name": "timestamp_arrive",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "moisture20": {
+          "name": "moisture20",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        },
+        "moisture40": {
+          "name": "moisture40",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        },
+        "temperature_underground": {
+          "name": "temperature_underground",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        },
+        "moisture20_raw": {
+          "name": "moisture20_raw",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        },
+        "moisture40_raw": {
+          "name": "moisture40_raw",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        },
+        "temperature_underground_raw": {
+          "name": "temperature_underground_raw",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        },
+        "temperature": {
+          "name": "temperature",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        },
+        "humidity": {
+          "name": "humidity",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        },
+        "battery": {
+          "name": "battery",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        },
+        "battery_raw": {
+          "name": "battery_raw",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": -1
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.s_node_properties": {
+      "name": "s_node_properties",
+      "schema": "",
+      "columns": {
+        "deveui": {
+          "name": "deveui",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nwskey": {
+          "name": "nwskey",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apskey": {
+          "name": "apskey",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lat": {
+          "name": "lat",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 14.844598
+        },
+        "lng": {
+          "name": "lng",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 99.794765
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
