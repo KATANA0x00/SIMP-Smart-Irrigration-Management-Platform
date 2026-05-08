@@ -47,7 +47,11 @@ export default function RootLayout({ children }) {
           </div>
         </div>
 
-        <div className="min-h-[calc(100vh-144px)]">{children}</div>
+        <div className="min-h-[calc(100vh-144px)] flex justify-center px-8">
+          <div className="w-full max-w-[1440px]">
+            {children}
+          </div>
+        </div>
         <div className="h-[72] px-[32] bg-(--mtr-blue) text-white w-screen flex items-center gap-[75] shadow-md">
           <label>Smart Irrigration Management Platform</label>
         </div>
