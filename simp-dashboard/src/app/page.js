@@ -3,6 +3,7 @@ import { useState } from "react";
 import Dropdown from "@/components/Input/Dropdown";
 import Grid from "@/components/Grid";
 import Box from "@/components/Box";
+import Button from "@/components/Button";
 
 export default function Home() {
   const [selectedNodes, setSelectedNodes] = useState([]);
@@ -186,7 +187,6 @@ export default function Home() {
           </div>
         </div>
       </Box>
-
       {/* Box in the box metrics */}
       <Box className="col-span-6 flex justify-center">
         <div className="m-6 w-full max-w-[500px]">
@@ -331,7 +331,7 @@ export default function Home() {
       </Box>
       {/* Sensor details */}
       <Box className="col-span-4 flex justify-center">
-        <div className="w-full max-w-[500px] m-5 flex flex-col gap-3">
+        <div className="w-full max-w-[500px] my-5 mx-8 flex flex-col gap-3">
           {/* Sensor details content */}
           <div className="flex items-center place-content-between">
             <div>
@@ -391,7 +391,9 @@ export default function Home() {
                   className="w-[40px] h-[40px]"
                 />
                 <div>
-                  <div className="text-(--mtr-color-overview)">Moisture 20CM</div>
+                  <div className="text-(--mtr-color-overview)">
+                    Moisture 20CM
+                  </div>
                   <div className="text-xl font-bold text-(--mtr-color-moisture)">
                     45 kPa
                   </div>
@@ -419,14 +421,100 @@ export default function Home() {
                   className="w-[40px] h-[40px]"
                 />
                 <div>
-                  <div className="text-(--mtr-color-overview)">Moisture 40CM</div>
+                  <div className="text-(--mtr-color-overview)">
+                    Moisture 40CM
+                  </div>
                   <div className="text-xl font-bold text-(--mtr-color-moisture)">
                     45 kPa
                   </div>
                 </div>
-              </div>              
+              </div>
             </div>
           </div>
+        </div>
+      </Box>
+      {/* Line chart moisture */}
+      <Box className="col-span-12 flex justify-center">
+        <div className="w-full m-6">
+          {/* Head line chart */}
+          <div className="flex items-center gap-5">
+            <div className="flex items-center gap-2">
+              <img
+                src="/Icon-mois-avg.svg"
+                alt="Underground Average Icon"
+                className="w-[30px] h-[30px]"
+              />
+              <div className="text-xl font-bold text-(--mtr-color-moisture)">
+                Humidity/Moisture
+              </div>
+            </div>
+            <div>All</div>
+            <Dropdown
+              lists={["Node A", "Node B", "Node C", "Gateway 1"]}
+              value={selectedNodes}
+              onChange={setSelectedNodes}
+              placeholder="Select Node"
+              className="w-40"
+            />
+          </div>
+          {/* Line chart */}
+          <div>Line chart</div>
+        </div>
+      </Box>
+      {/* Line chart temperature */}
+      <Box className="col-span-12 flex justify-center">
+        <div className="w-full m-6">
+          {/* Head line chart */}
+          <div className="flex items-center gap-5">
+            <div className="flex items-center gap-2">
+              <img
+                src="/Icon-temp-avg.svg"
+                alt="Underground Average Icon"
+                className="w-[30px] h-[30px]"
+              />
+              <div className="text-xl font-bold text-(--mtr-color-temperature)">
+                Temperature
+              </div>
+            </div>
+            <div>All</div>
+            <Dropdown
+              lists={["Node A", "Node B", "Node C", "Gateway 1"]}
+              value={selectedNodes}
+              onChange={setSelectedNodes}
+              placeholder="Select Node"
+              className="w-40"
+            />
+          </div>
+          {/* Line chart */}
+          <div>Line chart</div>
+        </div>
+      </Box>
+      {/* Line chart battery */}
+      <Box className="col-span-12 flex justify-center">
+        <div className="w-full m-6">
+          {/* Head line chart */}
+          <div className="flex items-center gap-5">
+            <div className="flex items-center gap-2">
+              <img
+                src="/Battery-80.svg"
+                alt="Underground Average Icon"
+                className="w-[30px] h-[30px]"
+              />
+              <div className="text-xl font-bold text-(--mtr-color-battery-green)">
+                Battery Level
+              </div>
+            </div>
+            <div>All</div>
+            <Dropdown
+              lists={["Node A", "Node B", "Node C", "Gateway 1"]}
+              value={selectedNodes}
+              onChange={setSelectedNodes}
+              placeholder="Select Node"
+              className="w-40"
+            />
+          </div>
+          {/* Line chart */}
+          <div>Line chart</div>
         </div>
       </Box>
     </Grid>
