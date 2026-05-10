@@ -284,6 +284,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          {/* Battery overview */}
           <div>
             {/* Header battery */}
             <div className="w-full flex items-center place-content-between mb-3">
@@ -320,6 +321,110 @@ export default function Home() {
                 <div>60-100%:</div>
                 <div className="font-bold">3</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </Box>
+      {/* Map */}
+      <Box className="col-span-8 flex justify-center">
+        <div className=""></div>
+      </Box>
+      {/* Sensor details */}
+      <Box className="col-span-4 flex justify-center">
+        <div className="w-full max-w-[500px] m-5 flex flex-col gap-3">
+          {/* Sensor details content */}
+          <div className="flex items-center place-content-between">
+            <div>
+              <div className="text-xl font-bold">Sensor 1</div>
+              <div className="text-sm flex items-center gap-[5px] text-(--mtr-color-overview)">
+                <div className="w-[12px] h-[12px] bg-(--mtr-color-online) rounded-full"></div>
+                <div>Online</div>
+                <div className="w-[4px] h-[4px] bg-(--mtr-color-overview) rounded-full"></div>
+                <div>Last updated 2 minutes ago</div>
+              </div>
+            </div>
+            <div>Battery: 80%</div>
+          </div>
+          {/* Sensor details in the box */}
+          <div className="flex flex-col gap-2">
+            <div>In the box</div>
+            <div className="flex items-center gap-[25px]">
+              {/* Humidity */}
+              <div className="flex items-center gap-[25px]">
+                <img
+                  src="/Icon-mois-avg.svg"
+                  alt="Underground Average Icon"
+                  className="w-[40px] h-[40px]"
+                />
+                <div>
+                  <div className="text-(--mtr-color-overview)">Humidity</div>
+                  <div className="text-xl font-bold text-(--mtr-color-moisture)">
+                    35 %
+                  </div>
+                </div>
+              </div>
+              {/* Temperature */}
+              <div className="flex items-center gap-[25px]">
+                <img
+                  src="/Icon-temp-avg.svg"
+                  alt="Underground Average Icon"
+                  className="w-[40px] h-[40px]"
+                />
+                <div>
+                  <div className="text-(--mtr-color-overview)">Temperature</div>
+                  <div className="text-xl font-bold text-(--mtr-color-temperature)">
+                    22 °C
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Sensor details underground */}
+          <div className="flex flex-col gap-2">
+            <div>Underground</div>
+            <div className="flex flex-wrap items-center gap-[25px]">
+              {/* Moisture 20CM */}
+              <div className="flex items-center gap-[25px]">
+                <img
+                  src="/Icon-mois-underground-avg.svg"
+                  alt="Underground Average Icon"
+                  className="w-[40px] h-[40px]"
+                />
+                <div>
+                  <div className="text-(--mtr-color-overview)">Moisture 20CM</div>
+                  <div className="text-xl font-bold text-(--mtr-color-moisture)">
+                    45 kPa
+                  </div>
+                </div>
+              </div>
+              {/* Temperature */}
+              <div className="flex items-center gap-[25px]">
+                <img
+                  src="/Icon-temp-avg.svg"
+                  alt="Underground Average Icon"
+                  className="w-[40px] h-[40px]"
+                />
+                <div>
+                  <div className="text-(--mtr-color-overview)">Temperature</div>
+                  <div className="text-xl font-bold text-(--mtr-color-temperature)">
+                    22 °C
+                  </div>
+                </div>
+              </div>
+              {/* Moisture 40CM */}
+              <div className="flex items-center gap-[25px]">
+                <img
+                  src="/Icon-mois-underground-avg.svg"
+                  alt="Underground Average Icon"
+                  className="w-[40px] h-[40px]"
+                />
+                <div>
+                  <div className="text-(--mtr-color-overview)">Moisture 40CM</div>
+                  <div className="text-xl font-bold text-(--mtr-color-moisture)">
+                    45 kPa
+                  </div>
+                </div>
+              </div>              
             </div>
           </div>
         </div>
