@@ -9,9 +9,11 @@ export default function Home() {
   const [selectedNodes, setSelectedNodes] = useState([]);
 
   return (
-    <Grid className="">
+    <Grid>
+      {/* Sensor Monitoring Header */}
+      <div className="text-3xl font-bold col-span-12 row-1">Sensor Monitoring</div>
       {/* Box underground metrics */}
-      <Box className="col-span-6 flex justify-center">
+      <Box className="row-2 col-span-6 flex justify-center">
         <div className="m-6 w-full max-w-[500px]">
           {/* Header underground overview */}
           <div className="w-full flex items-center place-content-between mb-3">
@@ -188,7 +190,7 @@ export default function Home() {
         </div>
       </Box>
       {/* Box in the box metrics */}
-      <Box className="col-span-6 flex justify-center">
+      <Box className="row-2 col-span-6 flex justify-center">
         <div className="m-6 w-full max-w-[500px]">
           {/* Header underground overview */}
           <div className="w-full flex items-center place-content-between mb-3">
@@ -326,11 +328,11 @@ export default function Home() {
         </div>
       </Box>
       {/* Map */}
-      <Box className="col-span-8 flex justify-center">
+      <Box className="row-3 col-span-8 flex justify-center">
         <div className=""></div>
       </Box>
       {/* Sensor details */}
-      <Box className="col-span-4 flex justify-center">
+      <Box className="row-3 col-span-4 flex justify-center">
         <div className="w-full max-w-[500px] my-5 mx-8 flex flex-col gap-3">
           {/* Sensor details content */}
           <div className="flex items-center place-content-between">
