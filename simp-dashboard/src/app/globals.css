@@ -20,6 +20,8 @@
   --mtr-color-battery-yellow: #FCB957;
   --mtr-color-battery-green: #2AB767;
   --mtr-color-online: #00A63E;
+  --mtr-color-button-on: #00A63E;
+  --mtr-color-button-off: #E43D23;
 }
 
 html,
