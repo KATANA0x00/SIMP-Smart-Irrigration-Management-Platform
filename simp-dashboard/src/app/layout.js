@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
           </div>
         </div>
 
-        <div className="min-h-[calc(100vh-144px)] flex justify-center px-8">
+        <div className="min-h-[calc(100vh-144px)] flex justify-center">
           <div className="w-full max-w-[1440px]">
             {children}
           </div>
