@@ -43,7 +43,7 @@ export default function Dropdown({
 
   return (
     <div className={`relative ${className}`}>
-      <div className="rounded border border-gray-300 flex overflow-hidden focus-within:border-blue-500 transition-colors bg-white">
+      <div className="rounded border border-(--mtr-gray) flex overflow-hidden focus-within:border-blue-500 transition-colors bg-white">
         <input
           ref={inputRef}
           type="text"
