@@ -5,6 +5,9 @@ import Grid from "@/components/Grid";
 import Box from "@/components/Box";
 import Button from "@/components/Button";
 
+import CnodeList from "@/components/Cnode/List";
+import CnodeSchedule from "@/components/Cnode/Schedule";
+
 export default function ControlPage() {
   const [selectedNodes, setSelectedNodes] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
@@ -50,12 +53,17 @@ export default function ControlPage() {
           {/* Valve list content */}
           <div className="text-xl font-bold mb-3">Valve List</div>
           {/* Valve list */}
-          <div className="w-full flex flex-col gap-4 overflow-y-scroll h-[400px]">
-            {Array.from({ length: 15 }).map((_, index) => (
-              <div
+          <div className="w-full flex flex-col gap-[10px] overflow-y-scroll h-[400px]">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <CnodeList
                 key={index}
-                className="min-h-[60px] bg-gray-200 rounded shadow"
-              ></div>
+                data={{
+                  name: "Value 1",
+                  control_status: true,
+                  online: true,
+                }}
+                onClick={() => console.log("turn click")}
+              />
             ))}
           </div>
         </div>
@@ -135,12 +143,11 @@ export default function ControlPage() {
           <div className="w-full flex flex-col">
             <div className="text-xl font-bold mb-3">Schedule List</div>
           </div>
-          <div className="w-full flex flex-col gap-2 overflow-y-scroll h-[400px]">
+          <div className="w-full flex flex-col gap-[10px] overflow-y-scroll h-[400px]">
             {Array.from({ length: 10 }).map((_, index) => (
-              <div
+              <CnodeSchedule
                 key={index}
-                className="min-h-[60px] bg-gray-200 rounded shadow mb-4"
-              ></div>
+              />
             ))}
           </div>
         </div>

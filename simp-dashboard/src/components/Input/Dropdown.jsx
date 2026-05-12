@@ -43,7 +43,7 @@ export default function Dropdown({
 
   return (
     <div className={`relative ${className}`}>
-      <div className="rounded border border-(--mtr-gray) flex overflow-hidden focus-within:border-blue-500 transition-colors bg-white">
+      <div className="rounded border border-(--mtr-gray) flex overflow-hidden focus-within:border-blue-500 transition-colors bg-transparent">
         <input
           ref={inputRef}
           type="text"
@@ -59,7 +59,7 @@ export default function Dropdown({
         />
         <button
           type="button"
-          className="aspect-square flex-shrink-0 flex items-center justify-center px-2 hover:bg-gray-50 bg-white relative"
+          className="aspect-square flex-shrink-0 flex items-center justify-center px-2 hover:bg-black/10 bg-transparent relative"
           onMouseDown={toggleDropdown}
         >
           <svg

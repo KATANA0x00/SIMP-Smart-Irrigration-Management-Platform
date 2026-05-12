@@ -3,7 +3,8 @@ import { useState } from "react";
 import Dropdown from "@/components/Input/Dropdown";
 import Grid from "@/components/Grid";
 import Box from "@/components/Box";
-import Button from "@/components/Button";
+import BatteryBar from "@/components/Battery/Bar";
+import BatteryBlock from "@/components/Battery/Block";
 
 export default function Home() {
   const [selectedNodes, setSelectedNodes] = useState([]);
@@ -11,7 +12,9 @@ export default function Home() {
   return (
     <Grid>
       {/* Sensor Monitoring Header */}
-      <div className="text-3xl font-bold col-span-12 row-1">Sensor Monitoring</div>
+      <div className="text-3xl font-bold col-span-12 row-1">
+        Sensor Monitoring
+      </div>
       {/* Box underground metrics */}
       <Box className="row-2 col-span-6 flex justify-center">
         <div className="m-6 w-full max-w-[500px]">
@@ -306,24 +309,8 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <div>Bar</div>
-            <div className="w-full flex items-center gap-[20px]">
-              <div className="flex items-center gap-[5px]">
-                <div className="w-[10px] h-[10px] bg-(--mtr-color-battery-red) rounded-full"></div>
-                <div>&lt;29%:</div>
-                <div className="font-bold">1</div>
-              </div>
-              <div className="flex items-center gap-[5px]">
-                <div className="w-[10px] h-[10px] bg-(--mtr-color-battery-yellow) rounded-full"></div>
-                <div>30-59%:</div>
-                <div className="font-bold">2</div>
-              </div>
-              <div className="flex items-center gap-[5px]">
-                <div className="w-[10px] h-[10px] bg-(--mtr-color-battery-green) rounded-full"></div>
-                <div>60-100%:</div>
-                <div className="font-bold">3</div>
-              </div>
-            </div>
+            <BatteryBar nodePallate={{ G: 11, Y: 4, R: 5 }} />
+            
           </div>
         </div>
       </Box>
@@ -345,7 +332,7 @@ export default function Home() {
                 <div>Last updated 2 minutes ago</div>
               </div>
             </div>
-            <div>Battery: 80%</div>
+            <BatteryBlock level={79}/>
           </div>
           {/* Sensor details in the box */}
           <div className="flex flex-col gap-2">
