@@ -1,5 +1,6 @@
 import { Bai_Jamjuree } from "next/font/google";
 import "./globals.css";
+import "leaflet/dist/leaflet.css";
 import Link from "next/link";
 
 const baiJamjuree = Bai_Jamjuree({

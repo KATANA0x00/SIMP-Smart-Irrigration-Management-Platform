@@ -8,6 +8,8 @@ import Button from "@/components/Button";
 import CnodeList from "@/components/Cnode/List";
 import CnodeSchedule from "@/components/Cnode/Schedule";
 
+import MapCnode from "@/components/Map/Cnode";
+
 export default function ControlPage() {
   const [selectedNodes, setSelectedNodes] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
@@ -46,7 +48,9 @@ export default function ControlPage() {
         </Button>
       </div>
       {/* Map */}
-      <Box className="col-span-7 row-2"></Box>
+      <Box className="col-span-7 row-2 overflow-hidden">
+        <MapCnode />
+      </Box>
       {/* Control panel */}
       <Box className="col-span-5 row-2">
         <div className="m-6 flex flex-col">
@@ -145,9 +149,7 @@ export default function ControlPage() {
           </div>
           <div className="w-full flex flex-col gap-[10px] overflow-y-scroll h-[400px]">
             {Array.from({ length: 10 }).map((_, index) => (
-              <CnodeSchedule
-                key={index}
-              />
+              <CnodeSchedule key={index} />
             ))}
           </div>
         </div>

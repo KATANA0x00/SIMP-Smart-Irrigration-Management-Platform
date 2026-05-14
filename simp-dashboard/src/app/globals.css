@@ -22,6 +22,9 @@
   --mtr-color-online: #00A63E;
   --mtr-color-button-on: #00A63E;
   --mtr-color-button-off: #E43D23;
+
+  --marker-outer-size: 64px;
+  --marker-inner-size: 50px;
 }
 
 html,

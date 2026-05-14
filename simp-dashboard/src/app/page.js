@@ -6,6 +6,8 @@ import Box from "@/components/Box";
 import BatteryBar from "@/components/Battery/Bar";
 import BatteryBlock from "@/components/Battery/Block";
 
+import MapSnode from "@/components/Map/Snode";
+
 export default function Home() {
   const [selectedNodes, setSelectedNodes] = useState([]);
 
@@ -315,8 +317,8 @@ export default function Home() {
         </div>
       </Box>
       {/* Map */}
-      <Box className="row-3 col-span-8 flex justify-center">
-        <div className=""></div>
+      <Box className="row-3 col-span-8 flex justify-center overflow-hidden">
+        <MapSnode />
       </Box>
       {/* Sensor details */}
       <Box className="row-3 col-span-4 flex justify-center">
