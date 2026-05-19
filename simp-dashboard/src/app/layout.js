@@ -20,6 +20,10 @@ const navPage = [
     path: "/",
   },
   {
+    label: "Analyze",
+    path: "/analyze",
+  },
+  {
     label: "Control",
     path: "/control",
   },
